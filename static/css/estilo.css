@@ -1,0 +1,19 @@
+a, input{
+    display: block;
+    text-decoration: none;
+}
+
+img{
+    width: 30rem;
+}
+
+table, tr, td, th{
+    border: 2px solid crimson;
+    border-collapse: collapse;
+}
+
+div.mensagens{
+    color: tomato;
+    font-size: large;
+    font-weight: bold;
+}
