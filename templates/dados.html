@@ -1,14 +1,8 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    Nome: {{dados.nome}}
-    Email: {{dados.email}}
-
-    {% if dados.idade >= '18' %}
-    <h5>Você pode tirar carteira de motorista! </h5>
-    {% else %}
-    <h5>Aguarde um pouco mais para dirigir! :-P</h5>
-    {% endif %}
+    Data_Pedido: {{dados.data_pedido}}
+    Valor_Total: {{dados.valor_total}}
 
     <table>
         <tr>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+        <div class="mensagens">
+            {{ msg }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <a href="/pedidos/add">+ Adicionar</a>
+    <table>
+        <tr>
+            <th>Data Pedido</th>
+            <th>Valor Total</th>
+            <th>Status</th>
+            <th>Edita</th>
+            <th>Remove</th>
+        </tr>
+        {% for pedidos in dados %}
+        <tr>
+            <td>{{pedidos.data_pedido}}</td>
+            <td>{{pedidos.valor_total}}</td>
+            <td>{{pedidos.status}}</td>
+            <td><a href="/pedidos/edita/{{pedidos.id_pedido}}">Editar</a></td>
+            <td><a href="/pedidos/remove/{{pedidos.id_pedido}}">Remover</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

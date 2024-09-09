@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-<body>
-    <form action="/dados" method="post">
+    {% set mensagens = get_flashed_messages()%}
+    {%if mensagens %}
+        {% for msg in mensagens %}
+            <div class="message">
+                {{msg}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/pedidos/save" method="post">
         <label for="data_pedido">Data Pedido: </label>
         <input type="date" name="data_pedido" id="data_pedido">
         <label for="valor_total">Valor Total: </label>
         <input type="float" name="valor_total" id="valor_total">
         <label for="status">Status: </label>
         <input type="string" name="status" id="status">
-        <button type="submit">Enviar</button>
+        <button type="submit">Salvar</button>
     </form>
-    <img src="{{url_for('static', filename='img/gnome-chompski.gif')}}" alt="gnome-chompski">
+
 {% endblock %}

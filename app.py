@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, flash, redirect
 app = Flask(__name__)
 from database import db
 from flask_migrate import Migrate
-from models import Usuario
+from models import Pedidos
 app.config['SECRET_KEY'] = '9ebe6f92407c97b3f989420e0e6bebcf9d1976b2e230acf9faf4783f5adffe1b'
 
 # --> drive://usuario:senha@servidor/banco_de_dados
@@ -36,65 +36,64 @@ def dados():
     dados = request.form
     return render_template('dados.html', dados = dados)
 
-@app.route("/usuario")
-def usuario():
-    u = Usuario.query.all()
-    return render_template("usuario_lista.html", dados = u)
+@app.route("/pedidos")
+def pedidos():
+    p = Pedidos.query.all()
+    return render_template("pedidos_lista.html", dados = p)
 
-@app.route("/usuario/add")
-def usuario_add():
-    return render_template('usuario_add.html')
+@app.route("/pedidos/add")
+def pedidos_add():
+    return render_template('pedidos_add.html')
 
-@app.route("/usuario/save", methods=['POST'])
-def usuario_save():
-    nome = request.form.get('nome')
-    email = request.form.get('email')
-    idade = request.form.get('idade')
-    if nome and email and idade:
-        usuario = Usuario(nome, email, idade)
-        db.session.add(usuario)
+@app.route("/pedidos/save", methods=['POST'])
+def pedidos_save():
+    data_pedido = request.form.get('data_pedido')
+    valor_total = request.form.get('valor_total')
+    status = request.form.get('status')
+    if data_pedido and valor_total and status:
+        pedidos = Pedidos(data_pedido, valor_total, status)
+        db.session.add(pedidos)
         db.session.commit()
-        flash('Usuario Cadastrado com sucesso!!!')
-        return redirect('/usuario')
+        flash('Pedido Cadastrado com sucesso!!!')
+        return redirect('/pedidos')
     else:
         flash('Preencha todos os campos!!!')
-        return redirect('/usuario')
+        return redirect('/pedidos')
 
-@app.route("/usuario/remove/<int:id>")
-def usuario_remove(id):
-    usuario = Usuario.query.get(id)
-    if usuario:
-        db.session.delete(usuario)
+@app.route("/pedidos/remove/<int:id>")
+def pedidos_remove(id_pedido):
+    pedidos = Pedidos.query.get(id_pedido)
+    if pedidos:
+        db.session.delete(pedidos)
         db.session.commit()
-        flash("Usuário removido com sucesso!!")
-        return redirect("/usuario")
+        flash("Pedido removido com sucesso!!")
+        return redirect("/pedidos")
     else:
         flash("Caminho Incorreto")
-        return redirect("/usuario")
+        return redirect("/pedidos")
 
-@app.route("/usuario/edita/<int:id>")
-def usuario_edita(id):
-    usuario = Usuario.query.get(id)
-    return render_template("usuario_edita.html", dados=usuario)
+@app.route("/pedidos/edita/<int:id>")
+def pedidos_edita(id):
+    pedidos = Pedidos.query.get(id)
+    return render_template("pedidos_edita.html", dados=pedidos)
 
-@app.route("/usuario/editasave", methods=["POST"])
-def usuario_editasave():
-    nome = request.form.get("nome")
-    email = request.form.get("email")
-    idade = request.form.get("idade")
-    id = request.form.get("id")
-    if id and nome and email and idade:
-        usuario = Usuario.query.get(id)
-        usuario.nome = nome
-        usuario.email = email
-        usuario.idade = idade
+@app.route("/pedidos/editasave", methods=["POST"])
+def pedidos_editasave():
+    data_pedido = request.form.get('data_pedido')
+    valor_total = request.form.get('valor_total')
+    status = request.form.get('status')
+    id_pedido = request.form.get('id_pedido')
+    if id_pedido and data_pedido and valor_total and status:
+        pedidos = Pedidos.query.get(id_pedido)
+        pedidos.data_pedido = data_pedido
+        pedidos.valor_total = valor_total
+        pedidos.status = status
         db.session.commit()
         flash("Dados Atualizados com sucesso!")
-        return redirect("/usuario")
+        return redirect("/pedidos")
     else:
         flash("Faltando dados!!!")
-        return redirect("/usuario")
-
+        return redirect("/pedidos")
 
 
 if __name__ == '__main__':
