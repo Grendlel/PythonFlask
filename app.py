@@ -60,7 +60,7 @@ def pedidos_save():
         flash('Preencha todos os campos!!!')
         return redirect('/pedidos')
 
-@app.route("/pedidos/remove/<int:id>")
+@app.route("/pedidos/remove/<int:id_pedido>")
 def pedidos_remove(id_pedido):
     pedidos = Pedidos.query.get(id_pedido)
     if pedidos:
@@ -72,9 +72,9 @@ def pedidos_remove(id_pedido):
         flash("Caminho Incorreto")
         return redirect("/pedidos")
 
-@app.route("/pedidos/edita/<int:id>")
-def pedidos_edita(id):
-    pedidos = Pedidos.query.get(id)
+@app.route("/pedidos/edita/<int:id_pedido>")
+def pedidos_edita(id_pedido):
+    pedidos = Pedidos.query.get(id_pedido)
     return render_template("pedidos_edita.html", dados=pedidos)
 
 @app.route("/pedidos/editasave", methods=["POST"])

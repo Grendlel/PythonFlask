@@ -1,10 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Handjet:wght@100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Comic Neue';
+}
+
 a, input{
-    display: block;
     text-decoration: none;
 }
 
-img{
-    width: 30rem;
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-image: url(/static/img/pool.jpg);
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav div{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    font-size: x-large;
+    color: blueviolet;
+    text-decoration: none;
+    font-weight: bold;
+    height: 2rem;
+    background-image: url(/static/img/ladrilho.jpg);
+}
+
+nav div a{
+    display: flex;
+
+}
+
+main{
+    min-height: calc(100vh - 9rem);
+    background-color: cornflowerblue;
+    background-image: url(/static/img/sparkles.gif);
+}
+
+div.index h1{
+    display: flex;
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+div.index img{
+    display: flex;
+    width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav.index{
+    display: flex;
+    font-size: x-large;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
 }
 
 table, tr, td, th{
@@ -16,4 +79,35 @@ div.mensagens{
     color: tomato;
     font-size: large;
     font-weight: bold;
+}
+
+fieldset{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    border: 0.2rem solid black;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+table{
+    display: flex;
+    background-color: yellow;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+}
+
+footer{
+    height: 2rem;
+    display: flex;
+    background-color: aquamarine;
+    color: red;
+    justify-content: end;
+    align-items: center;
+    font-size: small;
+
 }

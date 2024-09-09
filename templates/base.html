@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
 </head>
 <body>
+<header>
+    <h1> Site CRUD Gabriel Machado</h1>
+</header>
     <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/form">Formulário</a>
-            </li>
-            <li>
-                <a href="/pedidos">Pedidos</a>
-            </li>
-        </ul>
+        <div>
+            <a href="/">Home</a>
+            <a href="/form">Formulário</a>
+            <a href="/pedidos">Pedidos</a>
+        </div>
     </nav>
     <main>
         {% block conteudo %}
         {% endblock %}
     </main>
 </body>
+<footer>
+    <h3> COPYRIGHT!! </h3>
+</footer>
 </html>

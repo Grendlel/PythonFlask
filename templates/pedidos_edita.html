@@ -10,7 +10,8 @@
         {% endfor %}
     {% endif %}
     <form action="/pedidos/editasave" method="post">
-        <input type="hidden" name="id_pedidos", value="{{dados.id_pedidos}}">
+        <fieldset>
+        <input type="hidden" name="id_pedido", value="{{dados.id_pedido}}">
         <label for="data_pedido">Data Pedido: </label>
         <input type="date" name="data_pedido" id="data_pedido", value="{{dados.data_pedido}}">
         <label for="valor_total">Valor Total: </label>
@@ -18,6 +19,7 @@
         <label for="status">Status: </label>
         <input type="string" name="status" id="status", value="{{dados.status}}">
         <button type="submit">Salvar</button>
+        </fieldset>
     </form>
 
 {% endblock %}

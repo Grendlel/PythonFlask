@@ -3,6 +3,7 @@
 {% block conteudo %}
 <body>
     <form action="/dados" method="post">
+        <fieldset>
         <label for="data_pedido">Data Pedido: </label>
         <input type="date" name="data_pedido" id="data_pedido">
         <label for="valor_total">Valor Total: </label>
@@ -10,6 +11,7 @@
         <label for="status">Status: </label>
         <input type="string" name="status" id="status">
         <button type="submit">Enviar</button>
+        </fieldset>
     </form>
     <img src="{{url_for('static', filename='img/gnome-chompski.gif')}}" alt="gnome-chompski">
 {% endblock %}
