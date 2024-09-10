@@ -28,7 +28,7 @@ nav div{
     align-items: center;
     display: flex;
     font-size: x-large;
-    color: blueviolet;
+    color: black;
     text-decoration: none;
     font-weight: bold;
     height: 2rem;
@@ -42,8 +42,9 @@ nav div a{
 
 main{
     min-height: calc(100vh - 9rem);
-    background-color: cornflowerblue;
-    background-image: url(/static/img/sparkles.gif);
+
+    /* background-color: cornflowerblue;
+    background-image: url(/static/img/sparkles.gif); */
 }
 
 div.index h1{
@@ -71,41 +72,66 @@ nav.index{
 }
 
 table, tr, td, th{
-    border: 2px solid crimson;
+    border: 2px solid rgb(5, 71, 147);
     border-collapse: collapse;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: x-large; 
+    background-color: rgb(0, 217, 255);
+    justify-content: center; 
+}
+
+.tabula{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 6rem;
+}
+
+.Adicionar{
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+
+table{
+    margin: auto;
 }
 
 div.mensagens{
-    color: tomato;
-    font-size: large;
+    color: rgb(255, 179, 0);
+    font-size: xx-large;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
 }
 
 fieldset{
     display: flex;
     width: fit-content;
     height: fit-content;
-    justify-content: center;
-    border: 0.2rem solid black;
+    border: 1px solid black;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    flex-direction: column;
-    padding: 2rem;
+    font-size: x-large;
 }
 
-table{
+form{
     display: flex;
-    background-color: yellow;
-    width: fit-content;
-    height: fit-content;
     justify-content: center;
+    padding-top: 14rem;
 }
 
 footer{
     height: 2rem;
     display: flex;
-    background-color: aquamarine;
-    color: red;
+    background-image: url(/static/img/ladrilho.jpg);
+    color: blueviolet;
     justify-content: end;
     align-items: center;
     font-size: small;

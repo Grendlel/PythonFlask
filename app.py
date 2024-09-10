@@ -58,7 +58,7 @@ def pedidos_save():
         return redirect('/pedidos')
     else:
         flash('Preencha todos os campos!!!')
-        return redirect('/pedidos')
+        return redirect('/pedidos/add')
 
 @app.route("/pedidos/remove/<int:id_pedido>")
 def pedidos_remove(id_pedido):

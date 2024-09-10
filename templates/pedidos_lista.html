@@ -9,7 +9,9 @@
         </div>
         {% endfor %}
     {% endif %}
-    <a href="/pedidos/add">+ Adicionar</a>
+    <div class="tabula">
+        <a href="/pedidos/add", class="Adicionar">+ Adicionar</a>
+    </div>
     <table>
         <tr>
             <th>Data Pedido</th>
@@ -28,4 +30,6 @@
         </tr>
         {% endfor %}
     </table>
+    <img src="{{url_for('static', filename='img/gnome-chompski.gif')}}" alt="gnome-chompski">
+
 {% endblock %}
