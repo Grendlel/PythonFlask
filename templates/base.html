@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
 </head>
 <body>
-<header>
-    <h1> Site CRUD Gabriel Machado</h1>
-</header>
+    <header>
+        <h1>Machado Pedidos</h1>
+    </header>
     <nav>
         <div>
             <a href="/">Home</a>
-            <a href="/form">Formulário</a>
             <a href="/pedidos">Pedidos</a>
         </div>
     </nav>
@@ -21,8 +20,8 @@
         {% block conteudo %}
         {% endblock %}
     </main>
+    <footer>
+        <h3> ©copyright </h3>
+    </footer>
 </body>
-<footer>
-    <h3> ©copyright </h3>
-</footer>
 </html>

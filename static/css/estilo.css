@@ -31,21 +31,23 @@ nav div{
     color: black;
     text-decoration: none;
     font-weight: bold;
+
     height: 2rem;
     background-image: url(/static/img/ladrilho.jpg);
 }
 
 nav div a{
     display: flex;
+    text-shadow: -1px 1px black;
 
 }
 
 main{
     min-height: calc(100vh - 9rem);
-
     /* background-color: cornflowerblue;
     background-image: url(/static/img/sparkles.gif); */
 }
+
 
 div.index h1{
     display: flex;
@@ -135,5 +137,5 @@ footer{
     justify-content: end;
     align-items: center;
     font-size: small;
-
+    text-shadow: -1px 1px black;
 }
